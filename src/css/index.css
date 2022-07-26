@@ -1,0 +1,32 @@
+.dropdown-item:focus *, .dropdown-item:hover *, .dropdown-item:focus, .dropdown-item:hover {
+  color: rgb(0, 0, 0) !important;
+
+}  
+
+.dropdown-item:focus > div > button, .dropdown-item:hover > div > button {
+  border: 1px solid black !important;
+}
+
+input {
+  border: 1px solid black !important;  
+}
+
+.application {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+.mainPage {
+  height: 100% !important;
+  background-size: cover !important;
+  overflow-y:scroll;
+  background-color: lightslategrey !important;
+}
+
+.card {
+  width: 18rem !important;
+}
+
+.card-image-top {
+  max-height: 10rem !important;
+}
