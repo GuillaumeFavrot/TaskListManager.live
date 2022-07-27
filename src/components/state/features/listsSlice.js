@@ -6,12 +6,10 @@ const initialState = {
   message: ''
 }
 
-const url = 'http://127.0.0.1:8000/'
-
 export const getLists = createAsyncThunk(
   'lists/getLists',
   async () => {
-    const res = await fetch(`${url}api/lists`).then(
+    const res = await fetch(`api/lists`).then(
     (data) => data.json()
   )
   return res
@@ -21,7 +19,7 @@ export const addList = createAsyncThunk(
   'lists/addList',
   async (list) => {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/lists`,
+        `/api/lists`,
         {
           method: 'POST',
           body: JSON.stringify(list),
@@ -39,7 +37,7 @@ export const modifyList = createAsyncThunk(
   'lists/modifyList',
   async (list) => {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/lists`,
+        `/api/lists`,
         {
           method: 'PUT',
           body: JSON.stringify(list),
@@ -57,7 +55,7 @@ export const deleteList = createAsyncThunk(
   'lists/deleteList',
   async (list, { rejectWithValue }) => {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/lists`,
+        `/api/lists`,
         {
           method: 'DELETE',
           body: JSON.stringify(list._id),
