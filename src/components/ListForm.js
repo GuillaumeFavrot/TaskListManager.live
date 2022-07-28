@@ -57,23 +57,24 @@ function ListForm() {
           <form onSubmit={(e) => submit(e)} className={formState === 'expanded' ? 'd-block' : 'd-none'}>
             <div className='form-group'>
               <label>Intitullé</label>
-              <input onChange ={(e) => onChange(e)} type="text" name='name' className="form-control mt-1" placeholder='Choisissez un nom' required/>
+              <input onChange ={(e) => onChange(e)} value={newListInformations.name} type="text" name='name' className="form-control mt-1" placeholder='Choisissez un nom' required/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Date butoire (optionel)</label>
-              <input onChange={(e) => onChange(e)} type="date" name='dueDate' className="form-control mt-1"/>
+              <input onChange={(e) => onChange(e)} value={newListInformations.dueDate} type="date" name='dueDate' className="form-control mt-1"/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Image (optionel)</label>
-              <input onChange={(e) => onChange(e)} type="URL" name='image' className="form-control mt-1" placeholder='Entrez votre URL'/>
+              <input onChange={(e) => onChange(e)} value={newListInformations.image} type="URL" name='image' className="form-control mt-1" placeholder='Entrez votre URL'/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Commentaire (optionel)</label>
-              <textarea  onChange={(e) => onChange(e)} type="text" name='comment' className="form-control mt-1" placeholder='Saisissez votre commentaire'/>
+              <textarea  onChange={(e) => onChange(e)} value={newListInformations.comment} type="text" name='comment' className="form-control mt-1" placeholder='Saisissez votre commentaire'/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Priorité</label>
               <select className='form-select mt-1' name='priority' required>
+                <option></option>
                 <option onClick={(e) => onChange(e)} name='priority' value='high'>Haute</option>
                 <option onClick={(e) => onChange(e)} name='priority' value='medium'>Moyenne</option>
                 <option onClick={(e) => onChange(e)} name='priority' value='low'>basse</option>

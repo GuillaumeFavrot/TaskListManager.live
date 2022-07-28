@@ -79,7 +79,6 @@ function ListCard({list}) {
       priority: '',
       tasks: []
     })
-    
   }
 
   const taskSubmit = (e) => {
@@ -172,7 +171,7 @@ function ListCard({list}) {
               <hr/>
             </div>
             <form onSubmit = {(e) => taskSubmit(e)} className='d-flex justify-content-between align-items-center'>
-              <input onChange ={(e) => onTaskNameChange(e)} type="text" name='name' className="form-control mt-1" placeholder='Nouvelle tâche'/>
+              <input onChange ={(e) => onTaskNameChange(e)} value={newTask.name} type="text" name='name' className="form-control mt-1" placeholder='Nouvelle tâche'/>
               <button className={view.theme === 'dark' ? 'btn btn-outline-light mt-1 ms-1' : 'btn btn-outline-dark mt-1 ms-1'} type="submit" data-bs-toggle="expand" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <CheckIcon size={16} className='text-success' />
               </button>
@@ -187,19 +186,19 @@ function ListCard({list}) {
             <h5 className='mt-3'>Modification de liste</h5>
             <div className='form-group'>
               <label>Intitullé</label>
-              <input onChange ={(e) => onListInfoChange(e)} type="text" name='name' className="form-control mt-1" placeholder={list.name}/>
+              <input onChange ={(e) => onListInfoChange(e)} value={newListInformations.name} type="text" name='name' className="form-control mt-1" placeholder={list.name}/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Date butoire (optionel)</label>
-              <input  onChange ={(e) => onListInfoChange(e)} type="date" name='dueDate' className="form-control mt-1" placeholder={list.dueDate}/>
+              <input  onChange ={(e) => onListInfoChange(e)} value={newListInformations.dueDate} type="date"  name='dueDate' className="form-control mt-1" placeholder={list.dueDate}/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Image (optionel)</label>
-              <input onChange ={(e) => onListInfoChange(e)} type="URL" name='image' className="form-control mt-1" placeholder={list.image}/>
+              <input onChange ={(e) => onListInfoChange(e)} value={newListInformations.image} type="URL" name='image' className="form-control mt-1" placeholder={list.image}/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Commentaire (optionel)</label>
-              <textarea onChange ={(e) => onListInfoChange(e)} type="text" name='comment' className="form-control mt-1" placeholder={list.comment}/>
+              <textarea onChange ={(e) => onListInfoChange(e)} value={newListInformations.comment} type="text" name='comment' className="form-control mt-1" placeholder={list.comment}/>
             </div>
             <div className='form-group'>
               <label className='mt-2'>Priorité</label>
