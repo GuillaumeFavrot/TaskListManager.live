@@ -6,7 +6,6 @@ from bson.objectid import ObjectId
 
 @csrf_exempt
 def listApi(request):
-  print(request)
   if request.method == 'GET':
     lists = collection.find({})
     convertedLists = objectIdConverter(list(lists))

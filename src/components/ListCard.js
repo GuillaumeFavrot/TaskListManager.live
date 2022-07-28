@@ -65,7 +65,7 @@ function ListCard({list}) {
     e.preventDefault()
     let updatedList = JSON.parse(JSON.stringify(getListData()))
     for (let field in newListInformations) {
-      if (newListInformations[field] !== "" && newListInformations[field] !== [])
+      if (newListInformations[field] !== "" && field !== 'tasks')
       updatedList[field] = newListInformations[field]
     }
     setFormState('collapsed')
@@ -162,7 +162,7 @@ function ListCard({list}) {
             <div className={list.tasks.length === 0 ? "d-none" : "d-block" }>
               <hr/>
                 <h6 className={progression === 100 ? 'd-none' : 'd-block'}>Progression</h6>
-                <h6 className={progression !== 100 ? 'd-none' : 'd-block text-success'}>Taĉhes achevées!</h6>
+                <h6 className={progression !== 100 ? 'd-none' : 'd-block text-success'}>Tâches achevées!</h6>
                 <div className="progress mb-2">
                   <div className="progress-bar" role="progressbar" style={{width: percentage}} aria-valuenow={progression} aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
