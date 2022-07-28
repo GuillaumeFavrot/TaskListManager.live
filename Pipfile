@@ -12,7 +12,8 @@ gunicorn = "==20.1.0"
 pymongo = "==4.2.0"
 sqlparse = "==0.4.2"
 whitenoise = "==6.2.0"
-"backports.zoneinfo" = "==0.2.1"
+
+
 
 [dev-packages]
 
